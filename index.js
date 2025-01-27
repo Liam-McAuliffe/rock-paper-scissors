@@ -13,16 +13,70 @@ let computerScore = 0;
 
 /* Computer Chooses an Option */
 function getComputerChoice() {
-  randNum = Math.floor(Math.random() * 3) + 1;
+  randNum = Math.floor(Math.random() * 3);
   return options[randNum];
 }
-
-console.log(getComputerChoice());
 
 /* Human Chooses an Option */
 function getHumanChoice() {
   userChoice = window.prompt("rock, paper, or scissors");
+  return userChoice;
+}
+
+function playRound(humanChoice, computerChoice) {
+  console.log(`Human chose: ${humanChoice}`);
+  console.log(`Computer chose: ${computerChoice}`);
+  humanChoice = humanChoice.toLowerCase();
+  switch (humanChoice) {
+    case "rock":
+      switch (computerChoice) {
+        case "rock":
+          console.log("Its a Tie!");
+          break;
+        case "paper":
+          console.log("Computer Wins!");
+          break;
+        case "scissors":
+          console.log("Human Wins!");
+          break;
+      }
+      break;
+    case "paper":
+      switch (computerChoice) {
+        case "rock":
+          console.log("Human Wins!");
+          humanScore++;
+          break;
+        case "paper":
+          console.log("Its a Tie!");
+          break;
+        case "scissors":
+          console.log("Computer Wins!");
+          computerScore++;
+          break;
+      }
+      break;
+    case "scissors":
+      switch (computerChoice) {
+        case "rock":
+          console.log("Computer Wins!");
+          computerScore++;
+          break;
+        case "paper":
+          console.log("Human Wins!");
+          humanScore++;
+          break;
+        case "scissors":
+          console.log("Its a Tie!");
+          break;
+      }
+      break;
+  }
 }
 
 getHumanChoice();
-console.log(userChoice);
+
+playRound(userChoice, getComputerChoice());
+
+console.log(`Human Score: ${humanScore}`);
+console.log(`Computer Score: ${computerScore}`);
