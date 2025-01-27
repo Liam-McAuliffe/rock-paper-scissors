@@ -35,9 +35,11 @@ function playRound(humanChoice, computerChoice) {
           break;
         case "paper":
           console.log("Computer Wins!");
+          computerScore++;
           break;
         case "scissors":
           console.log("Human Wins!");
+          humanScore++;
           break;
       }
       break;
@@ -72,11 +74,14 @@ function playRound(humanChoice, computerChoice) {
       }
       break;
   }
+  console.log(`Human Score: ${humanScore}`);
+  console.log(`Computer Score: ${computerScore}`);
 }
 
 getHumanChoice();
-
 playRound(userChoice, getComputerChoice());
 
-console.log(`Human Score: ${humanScore}`);
-console.log(`Computer Score: ${computerScore}`);
+let button = document.getElementById("play-again");
+button.addEventListener("click", () => {
+  playRound(getHumanChoice(), getComputerChoice());
+});
