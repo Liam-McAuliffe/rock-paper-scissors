@@ -1,0 +1,81 @@
+* {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 30em;
+}
+
+.score {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#rps-container {
+    max-width: 32em;
+    width: 100%;
+    min-width: 30em;
+    height: 32em;
+    margin: auto;
+    text-align: center;
+    border: 0.25em solid #4caf50;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+#computer-half {
+    align-self: flex-start;
+    width: 100%;
+    flex-grow: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bot-name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4caf50;
+    margin: 0.5em;
+}
+
+.rps-action {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2em;
+}
+
+#user-half {
+    align-self: flex-start;
+    width: 100%;
+    flex-grow: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 0.25em dashed #4caf50;
+}
+
+p {
+    margin: 0;
+}
+
+.btn-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button.rps-choice {
+    background-color: #4caf50;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 7em;
+    margin: 0.5em;
+}
